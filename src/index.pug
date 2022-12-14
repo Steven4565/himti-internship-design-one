@@ -1,0 +1,79 @@
+mixin button(href, label) 
+	a.button(href=href)=label
+
+mixin card(image, title, desc) 
+	.card-container 
+		img(src=image)
+		h3=title
+		p=desc 
+
+
+mixin textbox() 
+	.textbox-container 
+		input(type="email", placeholder="Enter your email address")
+		button Submit
+
+mixin lineContact(title, lineId) 
+	.line-contact-container 
+		h4=title
+		.line-id-container
+			img(src="lineLogo.png", alt="Line Logo")
+			p=lineId
+
+mixin icon(iconPath, value)
+	.icon 
+		img(src=iconPath)
+		p=value
+
+
+html 
+	head 
+		meta(charset="UTF-i")
+		title Design 1
+		link(rel="stylesheet", href="../public/output.css")
+	body 	
+		header 
+			nav.navbar-container
+				img.himti-logo(src="../assets/himtiLogo.png")
+				div.navbar-list
+					a.navbar-item(href="") Home
+					a.navbar-item(href="") Events
+					a.navbar-item(href="") About Us
+					a.navbar-item(href="") Contact Us
+		section.hero
+			.left 
+				h1 HIMTI STUDY TOUR
+				+button('', 'button1')
+			.right 
+				img.hero-image(src="")
+		section.events 
+			h1 EVENTS 
+			.cards-container
+				+card('../assets/cards/google.png', 'Google Indonesia', 'desc here')
+				+card('../assets/cards/tokped.png', 'Tokopedia Indonesia', 'desc here')
+				+card('../assets/cards/apple.png', 'Apple Indonesia', 'desc here')
+		section.about-us 
+			.left 
+				img(src="../assets/himtiBinus.png")
+			.right 
+				p Himpunanan Mahasiswa Teknik Informatika (HIMTI) Universitas Bina Nusantara adalah Organisasi Kemahasiswaan di Universitas Bina Nusantara yang berbentuk Himpunan Mahasiswa Jurusan (HMJ) untuk mahasiswa School of Computer Science (SOCS), BINUS UNIVERSITY.
+		section.contact-us 
+			h2 Contact Us 
+			p let us know anything you want! 
+			+textbox()
+			.contacts-container 
+				h4 CONTACT PERSON
+				+lineContact('HTML CSS', '@idline')
+				+lineContact('HTML CSS', '@ofoghimti2023')
+		section.footer 
+			.footer-container
+				.left 
+					img(src="../assets/himtiBinus.png", alt="Himti Binus Logo")
+					img(src="../assets/binusLogo.png", alt="Binus Logo")
+				.right 
+					+icon('../assets/icons/instagram.png', '@himti_binus')
+					+icon('../assets/icons/youtube.png', 'HIMTI BINUS')
+					+icon('../assets/icons/tiktok.png', '@himtibinus')
+			.copyright
+				p © Copyright 2023 HIMTI BINUS University.
+				
