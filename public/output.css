@@ -23,6 +23,19 @@ section {
   background-color: rgb(44, 62, 116);
 }
 
+.textbox-container {
+  border-radius: 2rem;
+}
+.textbox-container input {
+  border: 0;
+  padding: 0.8rem 7rem 0.8rem 2rem;
+  margin: 0;
+}
+.textbox-container button {
+  background-color: rgb(64, 90, 167);
+  padding: 0.8rem 0;
+}
+
 .navbar-container {
   background-color: rgb(146, 161, 205);
   display: flex;
@@ -124,12 +137,61 @@ section {
   font-size: 0.8rem !important;
 }
 
+.about-us {
+  background-color: rgb(146, 161, 205);
+}
+.about-us h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.about-us .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+.about-us .container .left {
+  width: 30%;
+}
+.about-us .container .right {
+  width: 60%;
+}
+.about-us .container .right p {
+  text-align: left;
+}
+
 .contact-us {
   background-color: rgb(146, 161, 205);
 }
+.contact-us h2 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+.contact-us p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 0.7rem 0;
+}
+.contact-us .contacts-container {
+  width: 70%;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+.contact-us .contacts-container .contact {
+  width: 30%;
+}
+.contact-us .contacts-container .contact .line-id-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .footer {
-  background-color: rgb(146, 161, 205);
+  background-color: rgb(64, 90, 167);
 }
 
 /*# sourceMappingURL=output.css.map */

@@ -17,7 +17,7 @@ mixin textbox()
 		button Submit
 
 mixin lineContact(title, lineId) 
-	.line-contact-container 
+	.line-contact-container.contact
 		h4=title
 		.line-id-container
 			img(src="lineLogo.png", alt="Line Logo")
@@ -56,16 +56,18 @@ html
 				+card('../assets/cards/tokped.png', 'Tokopedia Indonesia', 'desc here')
 				+card('../assets/cards/apple.png', 'Apple Indonesia', 'desc here')
 		section.about-us 
-			.left 
-				img(src="../assets/himtiBinus.png")
-			.right 
-				p Himpunanan Mahasiswa Teknik Informatika (HIMTI) Universitas Bina Nusantara adalah Organisasi Kemahasiswaan di Universitas Bina Nusantara yang berbentuk Himpunan Mahasiswa Jurusan (HMJ) untuk mahasiswa School of Computer Science (SOCS), BINUS UNIVERSITY.
+			h1 ABOUT US 
+			.container 
+				.left 
+					img(src="../assets/himtiBinusLogo.png")
+				.right 
+					p Himpunanan Mahasiswa Teknik Informatika (HIMTI) Universitas Bina Nusantara adalah Organisasi Kemahasiswaan di Universitas Bina Nusantara yang berbentuk Himpunan Mahasiswa Jurusan (HMJ) untuk mahasiswa School of Computer Science (SOCS), BINUS UNIVERSITY.
 		section.contact-us 
 			h2 Contact Us 
 			p let us know anything you want! 
 			+textbox()
 			.contacts-container 
-				h4 CONTACT PERSON
+				h4.contact CONTACT PERSON
 				+lineContact('HTML CSS', '@idline')
 				+lineContact('HTML CSS', '@ofoghimti2023')
 		section.footer 

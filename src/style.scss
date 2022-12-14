@@ -13,6 +13,11 @@ $navbar-height: 4rem;
 	justify-content: center;
 }
 
+@mixin section-heading {
+	font-size: 3rem;
+	font-weight: 400;
+}
+
 
 // ============== Default Styles ==============
 
@@ -38,6 +43,21 @@ section {
 
 	&:hover {
 		background-color: $color-accent-darken;
+	}
+}
+
+.textbox-container {
+	border-radius: 2rem;
+
+	input {
+		border: 0;
+		padding: 0.8rem 7rem 0.8rem 2rem; 
+		margin: 0;
+	}
+
+	button {
+		background-color: $color-accent;
+		padding: 0.8rem 0;
 	}
 }
 
@@ -113,8 +133,7 @@ section {
 	h1 {
 		color: black;
 		padding: 2rem 0;
-		font-size: 3rem;
-		font-weight: 400;
+		@include section-heading();
 	}
 
 	.cards-container {
@@ -163,10 +182,57 @@ section {
 	}
 }
 
+.about-us {
+	background-color: $color-main;
+
+	h1 {
+		@include section-heading();
+		margin-bottom: 30px;
+	}
+
+	.container {
+		@include flex-center();
+		justify-content: space-between;
+		.left {
+			width: 30%;
+		}
+
+		.right {
+			width: 60%;
+			p {
+				text-align: left;
+			}
+		}
+
+	}
+}
+
 .contact-us {
 	background-color: $color-main;
+	h2 {
+		@include section-heading();
+	}
+
+	p {
+		font-size: 1.2rem;
+		font-weight: 300;
+		margin: 0.7rem 0;
+	}
+
+	.contacts-container {
+		width: 70%;
+		margin: 1rem auto;
+		@include flex-center();
+		justify-content: space-between;
+		.contact {
+			width: 30%;
+			.line-id-container {
+				@include flex-center();
+			}
+		}
+	}
 }
 
 .footer {
-	background-color : $color-main;
+	background-color : $color-accent;
 }
