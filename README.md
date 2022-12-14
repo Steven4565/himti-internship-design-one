@@ -5,7 +5,6 @@ Open html file in `./public/index.html`
 Install developer dependencies by running these commands
 
 ```
-npm init
 npm install -g sass pug-cli
 ```
 
