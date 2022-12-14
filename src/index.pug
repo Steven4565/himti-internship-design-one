@@ -14,13 +14,13 @@ mixin card(image, title, desc)
 mixin textbox() 
 	.textbox-container 
 		input(type="email", placeholder="Enter your email address")
-		button Submit
+		input(type="submit")
 
 mixin lineContact(title, lineId) 
 	.line-contact-container.contact
 		h4=title
 		.line-id-container
-			img(src="lineLogo.png", alt="Line Logo")
+			img(src="../assets/icons/line.png", alt="Line Logo")
 			p=lineId
 
 mixin icon(iconPath, value)
