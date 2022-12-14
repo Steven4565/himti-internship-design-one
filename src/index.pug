@@ -17,7 +17,7 @@ mixin textbox()
 		input(type="submit")
 
 mixin lineContact(title, lineId) 
-	.line-contact-container.contact
+	.line-contact-container
 		h4=title
 		.line-id-container
 			img(src="../assets/icons/line.png", alt="Line Logo")
@@ -67,13 +67,13 @@ html
 			p let us know anything you want! 
 			+textbox()
 			.contacts-container 
-				h4.contact CONTACT PERSON
+				h4 CONTACT PERSON
 				+lineContact('HTML CSS', '@idline')
 				+lineContact('HTML CSS', '@ofoghimti2023')
 		section.footer 
 			.footer-container
 				.left 
-					img(src="../assets/himtiBinus.png", alt="Himti Binus Logo")
+					img(src="../assets/himtiBinusLogo.png", alt="Himti Binus Logo")
 					img(src="../assets/binusLogo.png", alt="Binus Logo")
 				.right 
 					+icon('../assets/icons/instagram.png', '@himti_binus')

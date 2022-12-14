@@ -90,10 +90,26 @@ section {
     font-size: 0.8rem;
     color: white;
 
-		&:hover {
-			cursor:pointer;
-			background-color: $color-accent-darken;
-		}
+    &:hover {
+      cursor: pointer;
+      background-color: $color-accent-darken;
+    }
+  }
+}
+
+.line-id-container {
+  @include flex-center();
+  justify-content: flex-start;
+  h4 {
+    text-align: left;
+  }
+  p {
+    @include clean-borders();
+    font-size: 0.8rem;
+  }
+  img {
+    height: 15px;
+    margin-right: 6px;
   }
 }
 
@@ -247,7 +263,7 @@ section {
     @include section-heading();
   }
 
-  p {
+  & > p {
     font-size: 1.2rem;
     font-weight: 300;
     margin: 0.7rem 0;
@@ -258,19 +274,17 @@ section {
     margin: 1rem auto;
     @include flex-center();
     justify-content: space-between;
-    .contact {
+
+    // I have no clue how to clean this
+    &>h4 {
       width: 30%;
-      .line-id-container {
-        @include flex-center();
-				justify-content: flex-start;
-				p {
-					@include clean-borders();
-					font-size: 0.8rem;
-				}
-				img {
-					height: 15px;
-					margin-right: 6px;
-				}
+      text-align: left;
+    } 
+
+    .line-contact-container {
+      width: 32%;
+      h4 {
+        text-align: left;
       }
     }
   }
@@ -278,4 +292,30 @@ section {
 
 .footer {
   background-color: $color-accent;
+
+  .footer-container {
+    width: 70%;
+    padding: 50px 0;
+    margin: 0 auto;
+
+    @include flex-center();
+    justify-content: space-between;
+
+    .left {
+      @include flex-center();
+    }
+    .right {
+      @include flex-center();
+      flex-direction: column;
+      .icon {
+        @include flex-center();
+      }
+    }
+  }
 }
+
+// ============== Tablet Media Queries ==============
+
+
+
+// ============== Phone Media Queries ==============
