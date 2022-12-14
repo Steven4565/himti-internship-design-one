@@ -2,13 +2,36 @@ $color-main: rgb(146, 161, 205);
 $color-accent: rgb(64, 90, 167);
 $color-main-darken: rgb(109, 120, 154);
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+$navbar-height: 4rem;
 
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+// ============== Default Styles ==============
+
+body, section, div, p, a, h1, h2, h3, h4, h5, h6 {
 	border: 0;
 	margin: 0;
 	padding: 0;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	font-family: 'Poppins';
 }
+
+.button {
+	background-color: $color-accent;
+	padding: 0.5rem 2rem;
+	border-radius: 2rem;
+}
+
+// ============== Section Styles ==============
 
 .navbar-container {
 	background-color: $color-main;
@@ -16,7 +39,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 
-	height: 4rem;
+	height: $navbar-height;
 
 	.himti-logo {
 		height: calc(100% - 10px);
@@ -25,21 +48,53 @@ body {
 	
 	.navbar-list {
 		height: 100%;
+
 		.navbar-item {
-			text-decoration: none;
 			color: white;
-			font-weight: bold;
+			font-weight: 300;
 			font-size: 1.5rem;
-			font-family: 'Poppins';
 	
 			display: table-cell;
 			vertical-align: middle;
 			padding: 0 1rem;
-			height: 4rem;
+			height: $navbar-height;
 		}
 
 		.navbar-item:hover {
 			background-color: $color-main-darken;
+		}
+	}
+}
+
+.hero {
+	background-color: $color-main;
+	height: calc(100vh - $navbar-height);
+
+	display: flex;
+	padding: 1rem;
+
+	.left {
+		width: 30vw;
+		padding-left: 3rem;
+		flex-direction: column;
+		@include flex-center();
+		align-items:flex-start;
+
+		h1 {
+			font-size: 3rem;
+			font-weight: 500;
+			text-align: left;
+			margin-bottom: 1rem;
+		}
+	}
+
+	.right {
+		width: 70vw;
+		@include flex-center();
+		flex-direction: column;
+
+		img {
+			height: 100%;
 		}
 	}
 }
