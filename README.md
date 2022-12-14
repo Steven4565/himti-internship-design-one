@@ -1,19 +1,22 @@
-Install dev dependencies by running these commands
+## Build
+Open html file in `./public/index.html`
+## Development
+
+Install developer dependencies by running these commands
 
 ```
 npm init
-npm install -g sass
-npm install -g pug-cli
+npm install -g sass pug-cli
 ```
 
 Run pug using the following command
 
 ```
-pug -w "./src/index.pug" -o "./public/" -P
+npm run pug
 ```
 
-Run sass
+Open a different terminal and run the follwing command
 
 ```
-sass --watch ./src/style.scss ./public/output.css
+npm run sass
 ```
