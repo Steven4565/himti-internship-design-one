@@ -1,6 +1,7 @@
 $color-main: rgb(146, 161, 205);
 $color-accent: rgb(64, 90, 167);
 $color-main-darken: rgb(109, 120, 154);
+$color-accent-darken: rgb(44, 62, 116);
 
 $navbar-height: 4rem;
 
@@ -15,7 +16,7 @@ $navbar-height: 4rem;
 
 // ============== Default Styles ==============
 
-body, section, div, p, a, h1, h2, h3, h4, h5, h6 {
+body, div, p, a, h1, h2, h3, h4, h5, h6 {
 	border: 0;
 	margin: 0;
 	padding: 0;
@@ -25,10 +26,19 @@ body, section, div, p, a, h1, h2, h3, h4, h5, h6 {
 	font-family: 'Poppins';
 }
 
+section {
+	padding: 2rem;
+}
+
 .button {
 	background-color: $color-accent;
 	padding: 0.5rem 2rem;
 	border-radius: 2rem;
+	display: inline-block; // To prevent margin collapsing
+
+	&:hover {
+		background-color: $color-accent-darken;
+	}
 }
 
 // ============== Section Styles ==============
@@ -97,4 +107,66 @@ body, section, div, p, a, h1, h2, h3, h4, h5, h6 {
 			height: 100%;
 		}
 	}
+}
+
+.events {
+	h1 {
+		color: black;
+		padding: 2rem 0;
+		font-size: 3rem;
+		font-weight: 400;
+	}
+
+	.cards-container {
+		@include flex-center();
+		justify-content: space-between;
+		align-items: flex-start;
+
+		margin: 2rem auto;
+		width: 90%;
+
+		.card-container {
+			width: 30%;
+			background-color: $color-main;
+			height: 30rem;
+
+			border-radius: 2rem;
+			overflow: hidden;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			box-shadow: 11px 4px 31px -9px rgba(0, 0, 0, 0.75);
+
+			img {
+				width: 100%;
+			}
+
+			h3 {
+				font-weight: 500;
+				font-size: 1.4rem;
+				padding: 1rem 0;
+			}
+
+			p {
+				font-size: 0.7rem;
+				margin-bottom: 1rem;
+			}
+
+			.button {
+				margin-bottom: 2rem;
+				font-size: 0.8rem !important;
+			}
+		}
+
+	}
+}
+
+.contact-us {
+	background-color: $color-main;
+}
+
+.footer {
+	background-color : $color-main;
 }

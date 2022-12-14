@@ -3,9 +3,12 @@ mixin button(href, label)
 
 mixin card(image, title, desc) 
 	.card-container 
-		img(src=image)
-		h3=title
-		p=desc 
+		.top 
+			img(src=image)
+			h3=title
+			p=desc 
+		.bottom
+			+button('#', 'Register Now')
 
 
 mixin textbox() 
@@ -43,7 +46,7 @@ html
 		section.hero
 			.left 
 				h1 HIMTI STUDY TOUR
-				+button('', 'Learn More')
+				+button('#', 'Learn More')
 			.right 
 				img.hero-image(src="../assets/orang.png")
 		section.events 
