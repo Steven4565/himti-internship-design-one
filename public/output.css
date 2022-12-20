@@ -17,6 +17,13 @@ button {
   color: white;
   text-decoration: none;
   font-family: "Poppins";
+}
+
+html {
+  width: 100%;
+}
+
+body {
   scroll-behavior: smooth;
 }
 
@@ -299,7 +306,7 @@ section {
   letter-spacing: 1;
 }
 
-@media only screen and (min-width: 801px) and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
   #hero {
     height: 30vh;
   }
@@ -339,6 +346,31 @@ section {
   }
   #footer .copyright p {
     font-size: 0.5rem;
+  }
+}
+@media only screen and (max-width: 801px) {
+  #hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    height: calc(100vh - 4rem);
+    flex-direction: column-reverse;
+  }
+  #hero .left, #hero .right {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50%;
+  }
+  #hero .left h1 {
+    text-align: center;
+  }
+  #hero .left a {
+    margin: 0 auto;
   }
 }
 

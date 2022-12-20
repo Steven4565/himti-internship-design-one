@@ -7,7 +7,7 @@ $navbar-height: 4rem;
 
 $desktop: 1000px;
 $tablet: 801px;
-$phone: 480px;
+$phone: 300px;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
@@ -54,6 +54,13 @@ button {
   color: white;
   text-decoration: none;
   font-family: 'Poppins';
+}
+
+html {
+  width: 100%;
+}
+
+body {
   scroll-behavior: smooth;
 }
 
@@ -359,7 +366,7 @@ section {
 
 
 
-@media only screen and (min-width: $tablet) and (max-width: $desktop) {
+@media only screen and (max-width: $desktop) {
   #hero {
     height: 30vh;
   }
@@ -422,6 +429,26 @@ section {
 
 // ============== Phone Media Queries ==============
 
-@media only screen and (min-width: $phone) {
-  // do Smth
+@media only screen and (max-width: $tablet) {
+  #hero {
+    @include flex-center();
+    @include clean-borders();
+    height: calc(100vh - $navbar-height);
+    flex-direction: column-reverse;
+
+    .left, .right {
+      @include clean-borders();
+      width: 100%;
+      height: 50%;
+    }
+
+    .left {
+      h1 {
+        text-align: center;
+      }
+      a {
+        margin: 0 auto;
+      }
+    }
+  }
 }
