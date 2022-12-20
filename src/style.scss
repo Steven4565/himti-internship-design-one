@@ -227,8 +227,7 @@ section {
 
   .container {
     @include flex-center();
-    min-width: 500px;
-    max-width: 800px;
+    @include set-width(500px, 800px);
     margin: 0 auto;
     justify-content: space-between;
     .left {
@@ -268,7 +267,6 @@ section {
 
     input[type='email'] {
       @include clean-borders();
-      height: 100%;
       width: 80%;
       padding: 0 10%;
       color: black;
@@ -366,7 +364,7 @@ section {
 
 
 
-@media only screen and (max-width: $desktop) {
+@media only screen and (max-width: $desktop)  and (min-width: calc($tablet + 1px)){
   #hero {
     height: 30vh;
   }
@@ -429,7 +427,11 @@ section {
 
 // ============== Phone Media Queries ==============
 
-@media only screen and (max-width: $tablet) {
+@media only screen and (max-width: $tablet) and (min-width: $phone) {
+  .navbar-list {
+    display: none;
+  }
+
   #hero {
     @include flex-center();
     @include clean-borders();
@@ -450,5 +452,75 @@ section {
         margin: 0 auto;
       }
     }
+  }
+
+  #events {
+    .cards-container {
+      @include set-width(200px, 400px);
+      flex-direction: column;
+      .card-container {
+        @include set-width(80%, 80%);
+        height: 30rem;
+        margin: 15px auto;
+
+        p {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+
+  #about-us {
+    .container {
+      @include set-width(200px, 400px);
+      flex-direction: column;
+      .left {
+        width: 100%;
+        img {
+          width: 60%;
+        }
+        padding-bottom: 50px;
+      }
+
+      .right {
+        width: 75%;
+
+        p {
+          font-size: 1rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  #contact-us {
+    .textbox-container {
+      @include set-width(200px, 400px);
+      overflow: visible;
+      flex-direction: column;
+      height: 100px;
+      width: 90%;
+
+      input[type='email'] {
+        width: 100%;
+        height: 30px;
+        border-radius: 2rem;
+        margin-bottom: 20px;
+      }
+
+      input[type='submit'] {
+        width: 40%;
+        height: 30px;
+        margin: 0 auto;
+        border-radius: 2rem;
+      }
+    }
+    
+    .contacts-container {
+      @include set-width(200px, 400px);
+    }
+  }
+
+  #footer {
   }
 }

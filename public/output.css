@@ -180,6 +180,7 @@ section {
   min-width: 500px;
   max-width: 800px;
   margin: 0 auto;
+  margin: 0 auto;
   justify-content: space-between;
 }
 #about-us .container .left {
@@ -219,7 +220,6 @@ section {
   border: 0;
   margin: 0;
   padding: 0;
-  height: 100%;
   width: 80%;
   padding: 0 10%;
   color: black;
@@ -306,7 +306,7 @@ section {
   letter-spacing: 1;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) and (min-width: 802px) {
   #hero {
     height: 30vh;
   }
@@ -348,7 +348,10 @@ section {
     font-size: 0.5rem;
   }
 }
-@media only screen and (max-width: 801px) {
+@media only screen and (max-width: 801px) and (min-width: 300px) {
+  .navbar-list {
+    display: none;
+  }
   #hero {
     display: flex;
     align-items: center;
@@ -370,6 +373,68 @@ section {
     text-align: center;
   }
   #hero .left a {
+    margin: 0 auto;
+  }
+  #events .cards-container {
+    min-width: 200px;
+    max-width: 400px;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  #events .cards-container .card-container {
+    min-width: 80%;
+    max-width: 80%;
+    margin: 0 auto;
+    height: 30rem;
+    margin: 15px auto;
+  }
+  #events .cards-container .card-container p {
+    font-size: 0.7rem;
+  }
+  #about-us .container {
+    min-width: 200px;
+    max-width: 400px;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  #about-us .container .left {
+    width: 100%;
+    padding-bottom: 50px;
+  }
+  #about-us .container .left img {
+    width: 60%;
+  }
+  #about-us .container .right {
+    width: 75%;
+  }
+  #about-us .container .right p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  #contact-us .textbox-container {
+    min-width: 200px;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: visible;
+    flex-direction: column;
+    height: 100px;
+    width: 90%;
+  }
+  #contact-us .textbox-container input[type=email] {
+    width: 100%;
+    height: 30px;
+    border-radius: 2rem;
+    margin-bottom: 20px;
+  }
+  #contact-us .textbox-container input[type=submit] {
+    width: 40%;
+    height: 30px;
+    margin: 0 auto;
+    border-radius: 2rem;
+  }
+  #contact-us .contacts-container {
+    min-width: 200px;
+    max-width: 400px;
     margin: 0 auto;
   }
 }
