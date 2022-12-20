@@ -39,30 +39,30 @@ html
 				.himti-logo-container
 					img.himti-logo(src="../assets/himtiLogo.png")
 				div.navbar-list
-					a.navbar-item(href="") Home
-					a.navbar-item(href="") Events
-					a.navbar-item(href="") About Us
-					a.navbar-item(href="") Contact Us
-		section.hero
+					a.navbar-item(href="#") Home
+					a.navbar-item(href="#events") Events
+					a.navbar-item(href="#about-us") About Us
+					a.navbar-item(href="#	contact-us") Contact Us
+		section#hero
 			.left 
 				h1 HIMTI STUDY TOUR
 				+button('#', 'Learn More')
 			.right 
 				img.hero-image(src="../assets/orang.png")
-		section.events 
+		section#events 
 			h1 EVENTS 
 			.cards-container
-				+card('../assets/cards/google.png', 'Google Indonesia', 'desc here')
-				+card('../assets/cards/tokped.png', 'Tokopedia Indonesia', 'desc here')
-				+card('../assets/cards/apple.png', 'Apple Indonesia', 'desc here')
-		section.about-us 
+				+card('../assets/cards/google.png', 'Google Indonesia', 'Google LLC is an American multinational technology company focusing on search engine technology, online advertising, cloud computing, computer software, quantum computing, e-commerce, artificial intelligence, and consumer electronics.')
+				+card('../assets/cards/tokped.png', 'Tokopedia Indonesia', 'PT Tokopedia is an Indonesian e-commerce company. Tokopedia is a subsidiary of a new holding company called GoTo, following a merger with Gojek on 17 May 2021. It is one of the most visited e-commerce platforms in Indonesia. ')
+				+card('../assets/cards/apple.png', 'Apple Indonesia', 'Apple Inc. is an American multinational technology company headquartered in Cupertino, California, United States. Apple is the largest technology company by revenue and, as of June 2022, is the world\'s biggest company by market capitalization.')
+		section#about-us 
 			h1 ABOUT US 
 			.container 
 				.left 
 					img(src="../assets/himtiBinusLogo.png")
 				.right 
 					p Himpunanan Mahasiswa Teknik Informatika (HIMTI) Universitas Bina Nusantara adalah Organisasi Kemahasiswaan di Universitas Bina Nusantara yang berbentuk Himpunan Mahasiswa Jurusan (HMJ) untuk mahasiswa School of Computer Science (SOCS), BINUS UNIVERSITY.
-		section.contact-us 
+		section#contact-us 
 			h2 CONTACT US 
 			p let us know anything you want! 
 			+textbox()

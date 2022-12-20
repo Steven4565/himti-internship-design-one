@@ -17,6 +17,7 @@ button {
   color: white;
   text-decoration: none;
   font-family: "Poppins";
+  scroll-behavior: smooth;
 }
 
 section {
@@ -79,13 +80,13 @@ section {
   background-color: rgb(109, 120, 154);
 }
 
-.hero {
+#hero {
   background-color: rgb(146, 161, 205);
   height: calc(100vh - 4rem);
   display: flex;
   padding: 1rem;
 }
-.hero .left {
+#hero .left {
   width: 30vw;
   padding-left: 3rem;
   flex-direction: column;
@@ -94,39 +95,41 @@ section {
   justify-content: center;
   align-items: flex-start;
 }
-.hero .left h1 {
+#hero .left h1 {
   font-size: 3rem;
   font-weight: 500;
   text-align: left;
   margin-bottom: 1rem;
 }
-.hero .right {
+#hero .right {
   width: 70vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.hero .right img {
+#hero .right img {
   height: 100%;
 }
 
-.events h1 {
+#events h1 {
   color: black;
   padding: 2rem 0;
   font-size: 3rem;
   font-weight: 400;
 }
-.events .cards-container {
+#events .cards-container {
   display: flex;
   align-items: center;
   justify-content: center;
   justify-content: space-between;
   align-items: flex-start;
   margin: 2rem auto;
-  width: 90%;
+  min-width: 500px;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.events .cards-container .card-container {
+#events .cards-container .card-container {
   width: 30%;
   background-color: rgb(146, 161, 205);
   height: 30rem;
@@ -137,33 +140,33 @@ section {
   justify-content: space-between;
   box-shadow: 11px 4px 31px -9px rgba(0, 0, 0, 0.75);
 }
-.events .cards-container .card-container img {
+#events .cards-container .card-container img {
   width: 100%;
 }
-.events .cards-container .card-container h3 {
+#events .cards-container .card-container h3 {
   font-weight: 500;
   font-size: 1.4rem;
   padding: 1rem 0;
 }
-.events .cards-container .card-container p {
+#events .cards-container .card-container p {
   font-size: 0.7rem;
-  margin-bottom: 1rem;
+  margin: 0 10px 20px 10px;
 }
-.events .cards-container .card-container .button {
+#events .cards-container .card-container .button {
   margin-bottom: 2rem;
-  font-size: 0.8rem !important;
+  font-size: 0.8rem;
 }
 
-.about-us {
+#about-us {
   background-color: rgb(146, 161, 205);
   padding: 175px 0;
 }
-.about-us h1 {
+#about-us h1 {
   font-size: 3rem;
   font-weight: 400;
   margin-bottom: 30px;
 }
-.about-us .container {
+#about-us .container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,29 +175,29 @@ section {
   margin: 0 auto;
   justify-content: space-between;
 }
-.about-us .container .left {
+#about-us .container .left {
   width: 30%;
 }
-.about-us .container .right {
+#about-us .container .right {
   width: 60%;
 }
-.about-us .container .right p {
+#about-us .container .right p {
   text-align: left;
 }
 
-.contact-us {
+#contact-us {
   background-color: rgb(146, 161, 205);
 }
-.contact-us h2 {
+#contact-us h2 {
   font-size: 3rem;
   font-weight: 400;
 }
-.contact-us > p {
+#contact-us > p {
   font-size: 1.2rem;
   font-weight: 300;
   margin: 20px 0 40px 0;
 }
-.contact-us .textbox-container {
+#contact-us .textbox-container {
   min-width: 300px;
   max-width: 500px;
   margin: 0 auto;
@@ -205,7 +208,7 @@ section {
   height: 50px;
   margin: 0 auto 60px auto;
 }
-.contact-us .textbox-container input[type=email] {
+#contact-us .textbox-container input[type=email] {
   border: 0;
   margin: 0;
   padding: 0;
@@ -214,10 +217,10 @@ section {
   padding: 0 10%;
   color: black;
 }
-.contact-us .textbox-container input[type=email]:focus {
+#contact-us .textbox-container input[type=email]:focus {
   outline: none;
 }
-.contact-us .textbox-container input[type=submit] {
+#contact-us .textbox-container input[type=submit] {
   border: 0;
   margin: 0;
   padding: 0;
@@ -226,11 +229,11 @@ section {
   font-size: 1rem;
   color: white;
 }
-.contact-us .textbox-container input[type=submit]:hover {
+#contact-us .textbox-container input[type=submit]:hover {
   cursor: pointer;
   background-color: rgb(44, 62, 116);
 }
-.contact-us .contacts-container {
+#contact-us .contacts-container {
   min-width: 500px;
   max-width: 800px;
   margin: 0 auto;
@@ -239,14 +242,14 @@ section {
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
 }
-.contact-us .contacts-container > h4 {
+#contact-us .contacts-container > h4 {
   width: 30%;
   text-align: left;
 }
-.contact-us .contacts-container .line-contact-container {
+#contact-us .contacts-container .line-contact-container {
   width: 32%;
 }
-.contact-us .contacts-container .line-contact-container h4 {
+#contact-us .contacts-container .line-contact-container h4 {
   text-align: left;
 }
 
