@@ -24,6 +24,12 @@ $navbar-height: 4rem;
   padding: 0;
 }
 
+@mixin set-width($min, $max) {
+  min-width: $min;
+  max-width: $max;
+  margin: 0 auto;
+}
+
 // ============== Default Styles ==============
 
 body,
@@ -61,41 +67,6 @@ section {
   }
 }
 
-.textbox-container {
-  border-radius: 2rem;
-  overflow: hidden;
-
-  display: flex;
-  width: 50%;
-  height: 2rem;
-  margin: 0 auto;
-
-  input[type='email'] {
-    @include clean-borders();
-    height: 100%;
-    width: 80%;
-    padding: 0 10%;
-    color: black;
-
-    &:focus {
-      outline: none;
-    }
-  }
-
-  input[type='submit'] {
-    @include clean-borders();
-    background-color: $color-accent;
-    width: 20%;
-
-    font-size: 0.8rem;
-    color: white;
-
-    &:hover {
-      cursor: pointer;
-      background-color: $color-accent-darken;
-    }
-  }
-}
 
 .line-id-container {
   @include flex-center();
@@ -235,6 +206,7 @@ section {
 
 .about-us {
   background-color: $color-main;
+  padding: 175px 0;
 
   h1 {
     @include section-heading();
@@ -243,6 +215,9 @@ section {
 
   .container {
     @include flex-center();
+    min-width: 500px;
+    max-width: 800px;
+    margin: 0 auto;
     justify-content: space-between;
     .left {
       width: 30%;
@@ -266,14 +241,52 @@ section {
   & > p {
     font-size: 1.2rem;
     font-weight: 300;
-    margin: 0.7rem 0;
+    margin: 20px 0 40px 0;
   }
 
+    .textbox-container {
+      @include set-width(300px, 500px);
+      border-radius: 2rem;
+      overflow: hidden;
+  
+      display: flex;
+      width: 50%;
+      height: 50px;
+      margin: 0 auto 60px auto;
+  
+      input[type='email'] {
+        @include clean-borders();
+        height: 100%;
+        width: 80%;
+        padding: 0 10%;
+        color: black;
+  
+        &:focus {
+          outline: none;
+        }
+      }
+  
+      input[type='submit'] {
+        @include clean-borders();
+        background-color: $color-accent;
+        width: 20%;
+  
+        font-size: 1rem;
+        color: white;
+  
+        &:hover {
+          cursor: pointer;
+          background-color: $color-accent-darken;
+        }
+      }
+    }
+
   .contacts-container {
-    width: 70%;
+    @include set-width(500px, 800px);
     margin: 1rem auto;
-    @include flex-center();
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
 
     // I have no clue how to clean this
     &>h4 {
@@ -299,8 +312,6 @@ section {
     width: 80%;
     padding: 50px;
     margin: 0 auto;
-
-  
 
     @include flex-center();
     justify-content: space-between;
