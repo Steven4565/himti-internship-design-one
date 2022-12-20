@@ -295,7 +295,7 @@ section {
     @include set-width(500px, 800px);
     margin: 1rem auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     justify-items: center;
 
     // I have no clue how to clean this
@@ -303,6 +303,14 @@ section {
       width: 30%;
       text-align: left;
     } 
+
+    .line-contacts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+
+      width: 100%;
+    }
 
     .line-contact-container {
       width: 32%;
@@ -371,7 +379,7 @@ section {
 
   #events {
     .cards-container .card-container {
-      height: 35rem;
+      height: 37rem;
 
       p {
         font-size: 1rem;
@@ -518,9 +526,48 @@ section {
     
     .contacts-container {
       @include set-width(200px, 400px);
+      display: block;
+
+      h4 {
+        padding: 30px 0;
+        font-size: 1.5rem;
+        width: 100%;
+        text-align: center;
+      }
+
+      .line-contact-container {
+        width: 100%;
+        h4, p {
+          @include clean-borders();
+          text-align: center;
+          font-size: 0.8rem;
+        }
+        
+        .line-id-container {
+          justify-content: center;
+        }
+      }
     }
   }
 
   #footer {
+    .footer-container {
+      @include clean-borders();
+      width: 100%;
+      padding-bottom: 25px;
+
+      .left img {
+        height: 60px;
+      }
+
+      .right {
+        img {
+          height: 20px;
+        }
+        .top p {
+          font-size: 1rem;
+        }
+      }
+    }
   }
 }

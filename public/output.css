@@ -246,12 +246,18 @@ section {
   margin: 0 auto;
   margin: 1rem auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   justify-items: center;
 }
 #contact-us .contacts-container > h4 {
   width: 30%;
   text-align: left;
+}
+#contact-us .contacts-container .line-contacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  width: 100%;
 }
 #contact-us .contacts-container .line-contact-container {
   width: 32%;
@@ -311,7 +317,7 @@ section {
     height: 30vh;
   }
   #events .cards-container .card-container {
-    height: 35rem;
+    height: 37rem;
   }
   #events .cards-container .card-container p {
     font-size: 1rem;
@@ -436,6 +442,42 @@ section {
     min-width: 200px;
     max-width: 400px;
     margin: 0 auto;
+    display: block;
+  }
+  #contact-us .contacts-container h4 {
+    padding: 30px 0;
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+  }
+  #contact-us .contacts-container .line-contact-container {
+    width: 100%;
+  }
+  #contact-us .contacts-container .line-contact-container h4, #contact-us .contacts-container .line-contact-container p {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  #contact-us .contacts-container .line-contact-container .line-id-container {
+    justify-content: center;
+  }
+  #footer .footer-container {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding-bottom: 25px;
+  }
+  #footer .footer-container .left img {
+    height: 60px;
+  }
+  #footer .footer-container .right img {
+    height: 20px;
+  }
+  #footer .footer-container .right .top p {
+    font-size: 1rem;
   }
 }
 
