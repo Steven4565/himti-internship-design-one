@@ -324,24 +324,17 @@ section {
     }
     .right {
       @include flex-center();
+      align-items: flex-start;
 
       .icon {
         @include flex-center();
-      }
-    }
-    .right_logo {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-    .right_text  {
-    display: flex;
-    flex-direction: column; 
+        padding: 2px 0;
+        justify-content: flex-start;
 
-      p {
-        font-size: 18px;
+        img {
+          padding-right: 8px;
+        }
       }
-
     }
     
   }

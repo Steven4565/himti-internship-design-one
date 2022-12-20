@@ -273,23 +273,17 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  align-items: flex-start;
 }
 .footer .footer-container .right .icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2px 0;
+  justify-content: flex-start;
 }
-.footer .footer-container .right_logo {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-.footer .footer-container .right_text {
-  display: flex;
-  flex-direction: column;
-}
-.footer .footer-container .right_text p {
-  font-size: 18px;
+.footer .footer-container .right .icon img {
+  padding-right: 8px;
 }
 
 .copyright {
