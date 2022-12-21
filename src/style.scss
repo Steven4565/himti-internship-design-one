@@ -98,7 +98,7 @@ section {
 
 // ============== Section Styles ==============
 
-.navbar-container {
+nav {
   background-color: $color-main;
 
   display: flex;
@@ -108,13 +108,18 @@ section {
 
   .himti-logo {
     height: calc(100% - 10px);
-    padding: 5px;
+    padding: 20px;
   }
 
-  .navbar-list {
+  ul {
     height: 100%;
+    display: flex;
+  }  
+  li {
+    list-style: none;
+  }
 
-    .navbar-item {
+    a {
       color: white;
       font-weight: 300;
       font-size: 1.5rem;
@@ -124,11 +129,78 @@ section {
       padding: 0 1rem;
       height: $navbar-height;
     }
-
-    .navbar-item:hover {
+    
+    a:hover {
       background-color: $color-main-darken;
     }
+    // media query main header
+    @media only screen and (max-width: $tablet) and (min-width: $phone) {
+      ul {
+        display: none;
+      }
+      a {
+        font-size: 0.5rem;
+      }
+      .himti-logo {
+        padding: 5px;
+      }
+    }
+  
+
+  // hamburger 
+  .menu-toggle {
+    display: none;
   }
+  
+  // media query hamburger
+  @media only screen and (max-width: $tablet) and (min-width: $phone) {
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      height: 20px;
+      justify-content: space-between;
+      position: relative;
+      padding-right: 20px;
+      padding-top: 20px;
+      
+    }
+    .menu-toggle span {
+      display: block;
+      width: 28px;
+      height: 3px;
+      background-color: $color-accent;
+      border-radius: 3px;
+      transition: all 0.5s;
+  
+    }
+    .menu-toggle input {
+      position: absolute;
+      width: 40px;
+      height: 28px;
+      left: -5px;
+      top: -3px;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .menu-toggle span:nth-child(2){
+      transform-origin: 0 0;
+    }
+    .menu-toggle span:nth-child(4){
+      transform-origin: 0 100%;
+    }
+    .menu-toggle input:checked ~ span:nth-child(2){
+      transform: rotate(45deg) translate(-1px, -1px);
+    }
+    .menu-toggle input:checked ~ span:nth-child(4){
+      transform: rotate(-45deg) translate(-1px, 0);
+    }
+    .menu-toggle input:checked ~ span:nth-child(3){
+      transform: scale(0);
+    }
+  }
+
+  
 }
 
 #hero {

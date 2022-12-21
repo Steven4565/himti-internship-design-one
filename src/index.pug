@@ -35,15 +35,28 @@ html
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		title Design 1
 		link(rel="stylesheet", href="../public/output.css")
-	body 	
-		header.navbar-container
-				.himti-logo-container
-					img.himti-logo(src="../assets/himtiLogo.png")
-				div.navbar-list
+	body 
+
+		nav#home
+			img.himti-logo(src="../assets/himtiLogo.png")
+			ul 
+				li 
 					a.navbar-item(href="#") Home
+				li 
 					a.navbar-item(href="#events") Events
+				li 
 					a.navbar-item(href="#about-us") About Us
+				li 
 					a.navbar-item(href="#	contact-us") Contact Us
+
+			.menu-toggle 
+				input(type="checkbox")
+				span
+				span
+				span
+
+				
+			
 		section#hero
 			.left 
 				h1 HIMTI STUDY TOUR
