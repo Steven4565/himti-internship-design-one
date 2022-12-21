@@ -23,6 +23,7 @@ html {
   width: 100%;
 }
 
+html,
 body {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -91,37 +92,36 @@ nav a {
 nav a:hover {
   background-color: rgb(109, 120, 154);
 }
-@media only screen and (max-width: 1000px) and (min-width: 802px) {
-  nav ul {
-    display: flex;
-  }
-  nav .himti-logo {
-    padding: 5px;
-  }
-  nav a {
-    font-size: 1.2rem;
-  }
-}
 @media only screen and (max-width: 801px) and (min-width: 300px) {
   nav .menu-toggle {
     display: flex;
   }
   nav ul {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
-    width: 100%;
+    width: 50vw;
     height: 100vh;
-    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
     background-color: rgb(64, 90, 167);
     z-index: 1;
     transform: translateX(100%);
-    transition: all 1s;
   }
   nav ul.slide {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    padding: 2rem 0;
     transform: translateX(0);
+  }
+  nav ul.slide li {
+    width: 100%;
+  }
+  nav ul.slide a {
+    display: inline-block;
+    width: 100%;
+    font-size: 2rem;
   }
   nav a {
     font-size: 0.5rem;
@@ -210,6 +210,9 @@ nav .menu-toggle {
   width: 100%;
 }
 
+#events {
+  padding-bottom: 120px;
+}
 #events h1 {
   color: black;
   padding: 2rem 0;
@@ -392,7 +395,7 @@ nav .menu-toggle {
   justify-content: flex-start;
 }
 #footer .footer-container .right .icon img {
-  padding-right: 8px;
+  padding-right: 16px;
 }
 #footer .copyright {
   display: flex;
@@ -405,7 +408,8 @@ nav .menu-toggle {
 
 @media only screen and (max-width: 1000px) and (min-width: 802px) {
   #hero {
-    height: 30vh;
+    max-height: 80vh;
+    min-height: 50vh;
   }
   #events .cards-container .card-container {
     height: 37rem;
@@ -459,14 +463,19 @@ nav .menu-toggle {
     height: calc(100vh - 4rem);
     flex-direction: column-reverse;
   }
-  #hero .left, #hero .right {
+  #hero .left,
+  #hero .right {
     border: 0;
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 50%;
+    height: 60%;
+  }
+  #hero .left {
+    height: 30%;
   }
   #hero .left h1 {
+    width: 100%;
     text-align: center;
   }
   #hero .left a {
@@ -544,7 +553,8 @@ nav .menu-toggle {
   #contact-us .contacts-container .line-contact-container {
     width: 100%;
   }
-  #contact-us .contacts-container .line-contact-container h4, #contact-us .contacts-container .line-contact-container p {
+  #contact-us .contacts-container .line-contact-container h4,
+  #contact-us .contacts-container .line-contact-container p {
     border: 0;
     margin: 0;
     padding: 0;

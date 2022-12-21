@@ -60,6 +60,7 @@ html {
   width: 100%;
 }
 
+html,
 body {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -79,7 +80,6 @@ section {
     background-color: $color-accent-darken;
   }
 }
-
 
 .line-id-container {
   @include flex-center();
@@ -115,73 +115,70 @@ nav {
   ul {
     height: 100%;
     display: flex;
-  }  
+  }
   li {
     list-style: none;
   }
 
-    a {
-      color: white;
-      font-weight: 300;
-      font-size: 1.5rem;
+  a {
+    color: white;
+    font-weight: 300;
+    font-size: 1.5rem;
 
-      display: table-cell;
-      vertical-align: middle;
-      padding: 0 1rem;
-      height: $navbar-height;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 1rem;
+    height: $navbar-height;
+  }
+
+  a:hover {
+    background-color: $color-main-darken;
+  }
+
+  // media query main header ( phone )
+  @media only screen and (max-width: $tablet) and (min-width: $phone) {
+    .menu-toggle {
+      display: flex;
     }
-    
-    a:hover {
-      background-color: $color-main-darken;
+    ul {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 50vw;
+      height: 100vh;
+
+      flex-direction: column;
+      align-items: center;
+      background-color: $color-accent;
+      z-index: 1;
+      transform: translateX(100%);
     }
-    // media query main header ( tablet )
-    @media only screen and (max-width: $desktop)  and (min-width: calc($tablet + 1px)){
-      ul {
-        display: flex;
-      }
-      .himti-logo {
-        padding: 5px;
-      }
-      a {
-        font-size: 1.2rem;
-      }
-    }
-    // media query main header ( phone )
-    @media only screen and (max-width: $tablet) and (min-width: $phone) {
-      .menu-toggle {
-        display: flex;
-      }
-      ul {
-        position: absolute;
-        right: 0;
-        top: 0;
+    ul.slide {
+      @include clean-borders();
+      padding: 2rem 0;
+      transform: translateX(0);
+      li {
         width: 100%;
-        height: 100vh;
-        justify-content: space-evenly;
-        flex-direction: column;
-        align-items: center;
-        background-color: $color-accent;
-        z-index: 1;
-        transform: translateX(100%);
-        transition: all 1s;
       }
-      ul.slide {
-        transform: translateX(0);
-      }
-      a {
-        font-size: 0.5rem;
-      }
-      .himti-logo {
-        padding: 5px;
+      a{
+        display: inline-block;
+        width: 100%;
+        font-size: 2rem;
       }
     }
-  
+    a {
+      font-size: 0.5rem;
+    }
+    .himti-logo {
+      padding: 5px;
+    }
+  }
 
-  // hamburger 
+  // hamburger
   .menu-toggle {
     display: none;
   }
-  
+
   // media query hamburger
   @media only screen and (max-width: $tablet) and (min-width: $phone) {
     .menu-toggle {
@@ -192,7 +189,6 @@ nav {
       position: relative;
       padding-right: 20px;
       padding-top: 20px;
-      
     }
     .menu-toggle span {
       display: block;
@@ -201,7 +197,6 @@ nav {
       background-color: $color-accent;
       border-radius: 3px;
       transition: all 0.5s;
-  
     }
     .menu-toggle input {
       position: absolute;
@@ -213,24 +208,22 @@ nav {
       cursor: pointer;
       z-index: 1;
     }
-    .menu-toggle span:nth-child(2){
+    .menu-toggle span:nth-child(2) {
       transform-origin: 0 0;
     }
-    .menu-toggle span:nth-child(4){
+    .menu-toggle span:nth-child(4) {
       transform-origin: 0 100%;
     }
-    .menu-toggle input:checked ~ span:nth-child(2){
+    .menu-toggle input:checked ~ span:nth-child(2) {
       transform: rotate(45deg) translate(-1px, -1px);
     }
-    .menu-toggle input:checked ~ span:nth-child(4){
+    .menu-toggle input:checked ~ span:nth-child(4) {
       transform: rotate(-45deg) translate(-1px, 0);
     }
-    .menu-toggle input:checked ~ span:nth-child(3){
+    .menu-toggle input:checked ~ span:nth-child(3) {
       transform: scale(0);
     }
   }
-
-  
 }
 
 #hero {
@@ -267,6 +260,7 @@ nav {
 }
 
 #events {
+  padding-bottom: 120px;
   h1 {
     color: black;
     padding: 2rem 0;
@@ -401,10 +395,10 @@ nav {
     justify-items: center;
 
     // I have no clue how to clean this
-    &>h4 {
+    & > h4 {
       width: 30%;
       text-align: left;
-    } 
+    }
 
     .line-contacts {
       display: grid;
@@ -453,30 +447,27 @@ nav {
         justify-content: flex-start;
 
         img {
-          padding-right: 8px;
+          padding-right: 16px;
         }
       }
     }
-    
   }
   .copyright {
     @include flex-center();
-  
+
     p {
       letter-spacing: 1;
     }
-  
   }
 }
 
-
 // ============== Tablet Media Queries ==============
 
-
-
-@media only screen and (max-width: $desktop)  and (min-width: calc($tablet + 1px)){
+@media only screen and (max-width: $desktop) and (min-width: calc($tablet + 1px)) {
   #hero {
-    height: 30vh;
+    // height: 30vh;
+    max-height: 80vh;
+    min-height: 50vh;
   }
 
   #events {
@@ -491,26 +482,26 @@ nav {
 
   #about-us {
     .container {
-        .left {
-          width: 20%;
-        }
-        .right {
-          width: 75%;
-          p {
-            font-size: 1.7rem;
-          }
+      .left {
+        width: 20%;
+      }
+      .right {
+        width: 75%;
+        p {
+          font-size: 1.7rem;
         }
       }
+    }
   }
 
   #contact-us {
     .textbox-container {
-        @include set-width(700px, 800px);
-        height: 60px;
+      @include set-width(700px, 800px);
+      height: 60px;
 
-        input[type='email'] {
-          font-size: 2rem;
-        }
+      input[type='email'] {
+        font-size: 2rem;
+      }
     }
 
     .contacts-container {
@@ -519,7 +510,7 @@ nav {
   }
 
   #footer {
-    .footer-container .left  {
+    .footer-container .left {
       width: 30%;
       flex-grow: 0;
       img {
@@ -548,14 +539,17 @@ nav {
     height: calc(100vh - $navbar-height);
     flex-direction: column-reverse;
 
-    .left, .right {
+    .left,
+    .right {
       @include clean-borders();
       width: 100%;
-      height: 50%;
+      height: 60%;
     }
 
     .left {
+      height: 30%;
       h1 {
+        width: 100%;
         text-align: center;
       }
       a {
@@ -625,7 +619,7 @@ nav {
         border-radius: 2rem;
       }
     }
-    
+
     .contacts-container {
       @include set-width(200px, 400px);
       display: block;
@@ -639,12 +633,13 @@ nav {
 
       .line-contact-container {
         width: 100%;
-        h4, p {
+        h4,
+        p {
           @include clean-borders();
           text-align: center;
           font-size: 0.8rem;
         }
-        
+
         .line-id-container {
           justify-content: center;
         }
