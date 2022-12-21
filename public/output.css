@@ -25,6 +25,7 @@ html {
 
 body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 section {
@@ -90,9 +91,37 @@ nav a {
 nav a:hover {
   background-color: rgb(109, 120, 154);
 }
-@media only screen and (max-width: 801px) and (min-width: 300px) {
+@media only screen and (max-width: 1000px) and (min-width: 802px) {
   nav ul {
-    display: none;
+    display: flex;
+  }
+  nav .himti-logo {
+    padding: 5px;
+  }
+  nav a {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 801px) and (min-width: 300px) {
+  nav .menu-toggle {
+    display: flex;
+  }
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(64, 90, 167);
+    z-index: 1;
+    transform: translateX(100%);
+    transition: all 1s;
+  }
+  nav ul.slide {
+    transform: translateX(0);
   }
   nav a {
     font-size: 0.5rem;

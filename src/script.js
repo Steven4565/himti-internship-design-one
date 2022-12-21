@@ -1,6 +1,7 @@
-const menuToggle = document.querySelector('.menu-toggle input');
-const nav = document.querySelector('.himti-logo-container ul');
 
-menuToggle.addEventListener('click', function (){
-  nav.classList.toggle('slide');
+const menuToggle = document.querySelector('.menu-toggle input');
+const ul = document.querySelector('ul li');
+
+menuToggle.addEventListener('click', function () {
+  ul.classList.toggle('slide');
 });
