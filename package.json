@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pug": "pug -w \"./src/index.pug\" -o \"./public/\" -P",
+    "pug": "pug -w \"./src\" -o \"./public/\" -P",
     "sass": "sass --watch ./src/style.scss ./public/output.css"
   },
   "author": "",
